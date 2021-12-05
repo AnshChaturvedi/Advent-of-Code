@@ -11,85 +11,85 @@ for line in lines:
 
 # --------------------------- Part 1 ---------------------------
 
-# points1 = [point for point in points if point[0][0] == point[1][0] or point[0][1] == point[1][1]]
+points1 = [point for point in points if point[0][0] == point[1][0] or point[0][1] == point[1][1]]
 
-# hashmap1 = {}
+hashmap1 = {}
 
-# # Note the number of occurences of each point in each line segment
-# # Add info to hashmap1 for info retrieval after
-# for point in points1:
+# Note the number of occurences of each point in each line segment
+# Add info to hashmap1 for info retrieval after
+for point in points1:
 
-#     x1, x2 = point[0][0], point[1][0]
-#     y1, y2 = point[0][1], point[1][1]
+    x1, x2 = point[0][0], point[1][0]
+    y1, y2 = point[0][1], point[1][1]
 
-#     x1y1 = point[0]
-#     x2y2 = point[1]
+    x1y1 = point[0]
+    x2y2 = point[1]
 
-#     if x1y1 in hashmap1:
-#         hashmap1[x1y1] += 1
-#     else: hashmap1[x1y1] = 1
+    if x1y1 in hashmap1:
+        hashmap1[x1y1] += 1
+    else: hashmap1[x1y1] = 1
 
-#     if x2y2 in hashmap1:
-#         hashmap1[x2y2] += 1
-#     else: hashmap1[x2y2] = 1
+    if x2y2 in hashmap1:
+        hashmap1[x2y2] += 1
+    else: hashmap1[x2y2] = 1
 
-#     # x coordinates are the same, we iterate on y
-#     if x1 == x2:
+    # x coordinates are the same, we iterate on y
+    if x1 == x2:
 
-#         # if y1 < y2
-#         if y1 < y2:
+        # if y1 < y2
+        if y1 < y2:
             
-#             while y1 != y2 - 1:
-#                 y1 += 1
-#                 new_point = (x1, y1)
-#                 if new_point in hashmap1:
-#                     hashmap1[new_point] += 1
-#                 else: hashmap1[new_point] = 1
+            while y1 != y2 - 1:
+                y1 += 1
+                new_point = (x1, y1)
+                if new_point in hashmap1:
+                    hashmap1[new_point] += 1
+                else: hashmap1[new_point] = 1
 
-#         # if y1 > y2
-#         elif y1 > y2:
+        # if y1 > y2
+        elif y1 > y2:
 
-#             while y1 != y2 + 1:
-#                 y1 -= 1
-#                 new_point = (x1, y1)
-#                 if new_point in hashmap1:
-#                     hashmap1[new_point] += 1
-#                 else: hashmap1[new_point] = 1
+            while y1 != y2 + 1:
+                y1 -= 1
+                new_point = (x1, y1)
+                if new_point in hashmap1:
+                    hashmap1[new_point] += 1
+                else: hashmap1[new_point] = 1
 
-#     # y coordinates are the same, we iterate on x
-#     elif y1 == y2:
+    # y coordinates are the same, we iterate on x
+    elif y1 == y2:
 
-#         # if x1 < x2
-#         if x1 < x2:
+        # if x1 < x2
+        if x1 < x2:
 
-#             while x1 != x2 - 1:
-#                 x1 += 1
-#                 new_point = (x1, y1)
-#                 if new_point in hashmap1:
-#                     hashmap1[new_point] += 1
-#                 else: hashmap1[new_point] = 1
+            while x1 != x2 - 1:
+                x1 += 1
+                new_point = (x1, y1)
+                if new_point in hashmap1:
+                    hashmap1[new_point] += 1
+                else: hashmap1[new_point] = 1
             
-#         # if x1 > x2
-#         elif x1 > x2 + 1:
+        # if x1 > x2
+        elif x1 > x2 + 1:
 
-#             while x1 != x2 + 1:
-#                 x1 -= 1
-#                 new_point = (x1, y1)
-#                 if new_point in hashmap1:
-#                     hashmap1[new_point] += 1
-#                 else: hashmap1[new_point] = 1
+            while x1 != x2 + 1:
+                x1 -= 1
+                new_point = (x1, y1)
+                if new_point in hashmap1:
+                    hashmap1[new_point] += 1
+                else: hashmap1[new_point] = 1
     
-#     else:
-#         points1.remove(point)
+    else:
+        points1.remove(point)
 
-# # get count of points with an occurence >= 2
-# score = 0
-# for item in hashmap1:
-#     if hashmap1[item] >= 2:
-#         score += 1
+# get count of points with an occurence >= 2
+score = 0
+for item in hashmap1:
+    if hashmap1[item] >= 2:
+        score += 1
 
-# # prints out the answer
-# # print(score)
+# prints out the answer
+# print(score)
 
 # --------------------------- Part 2 ---------------------------
 
